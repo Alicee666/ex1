@@ -1,0 +1,24 @@
+{
+  "service": "search",
+  "index": {
+    "name": "branchguardian-resources-v1",
+    "refreshIntervalSeconds": 5,
+    "reconciliationIntervalMinutes": 30
+  },
+  "query": {
+    "maxLength": 256,
+    "defaultPageSize": 25,
+    "maxPageSize": 100,
+    "timeoutMilliseconds": 1500
+  },
+  "ranking": {
+    "exactNameBoost": 4.0,
+    "phraseBoost": 2.5,
+    "recencyHalfLifeDays": 30
+  },
+  "queue": {
+    "topic": "resource-index-events",
+    "maxAttempts": 5,
+    "visibilityTimeoutSeconds": 60
+  }
+}
