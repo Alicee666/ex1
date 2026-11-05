@@ -1,0 +1,23 @@
+{
+  "service": "checkout",
+  "cart": {
+    "maximumLineItems": 100,
+    "expirationMinutes": 30,
+    "priceSnapshotRequired": true
+  },
+  "inventory": {
+    "reservationTtlMinutes": 15,
+    "reservationQueue": "inventory-reservations",
+    "releaseOnPaymentFailure": true
+  },
+  "orders": {
+    "idempotencyTtlHours": 48,
+    "initialState": "pending_payment",
+    "eventTopic": "order-lifecycle-events"
+  },
+  "totals": {
+    "currency": "USD",
+    "taxProviderTimeoutMilliseconds": 2000,
+    "allowNegativeDiscounts": false
+  }
+}
