@@ -1,0 +1,26 @@
+{
+  "service": "login",
+  "session": {
+    "cookieName": "bg_session",
+    "idleTimeoutMinutes": 30,
+    "absoluteLifetimeHours": 12,
+    "secure": true,
+    "httpOnly": true,
+    "sameSite": "lax"
+  },
+  "passwordHash": {
+    "algorithm": "argon2id",
+    "memoryKiB": 65536,
+    "iterations": 3,
+    "parallelism": 2
+  },
+  "rateLimit": {
+    "maxFailures": 5,
+    "windowSeconds": 300,
+    "lockoutSeconds": 900
+  },
+  "audit": {
+    "enabled": true,
+    "eventName": "auth.login.completed"
+  }
+}
