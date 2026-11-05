@@ -1,0 +1,23 @@
+{
+  "service": "payment",
+  "provider": {
+    "name": "sandbox-gateway",
+    "apiTimeoutMilliseconds": 5000,
+    "maxRetries": 2
+  },
+  "processing": {
+    "supportedCurrencies": ["USD", "EUR", "GBP"],
+    "minimumAmountMinor": 50,
+    "maximumAmountMinor": 1000000,
+    "idempotencyTtlHours": 24
+  },
+  "webhooks": {
+    "path": "/webhooks/payments",
+    "signatureAlgorithm": "hmac-sha256",
+    "replayWindowSeconds": 300
+  },
+  "reconciliation": {
+    "intervalMinutes": 60,
+    "pendingPaymentAgeMinutes": 30
+  }
+}
