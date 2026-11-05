@@ -1,0 +1,23 @@
+{
+  "service": "profile",
+  "profile": {
+    "maxDisplayNameLength": 80,
+    "supportedLocales": ["en-US", "en-GB", "de-DE", "fr-FR"],
+    "defaultLocale": "en-US",
+    "defaultTimeZone": "UTC"
+  },
+  "updates": {
+    "requireVersionMatch": true,
+    "auditEventName": "profile.updated",
+    "maxPatchOperations": 20
+  },
+  "avatar": {
+    "enabled": true,
+    "maxSizeBytes": 5242880,
+    "acceptedContentTypes": ["image/jpeg", "image/png", "image/webp"],
+    "processingQueue": "profile-avatar-events"
+  },
+  "retention": {
+    "deactivatedProfilePurgeDays": 30
+  }
+}
